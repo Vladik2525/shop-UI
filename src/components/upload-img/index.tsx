@@ -2,7 +2,7 @@ import { useRef, useState } from "react";
 import { FlexibleButton } from "../../styled";
 
 const UploadImg = () => {
-    const ref = useRef(null);
+    const ref = useRef<HTMLInputElement | null>(null);
     const [file, setFile] = useState<File | null>(null);
 
     console.log(file)
@@ -23,7 +23,7 @@ const UploadImg = () => {
                 width="23.8%"
                 height="30px"
                 borderRadius="1px"
-                onClick={() => ref.current.click()}
+                onClick={() => ref.current?.click()}
             >
                 Upload Img
             </FlexibleButton>
